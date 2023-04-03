@@ -5,6 +5,10 @@
   "description": "使用 Vue3 + TS 构建的项目基础模版",
   "author": "sankeyangshu",
   "license": "MIT",
+  "keywords": [
+    "vue",
+    "typescript"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
@@ -16,7 +20,8 @@
   },
   "dependencies": {
     "normalize.css": "^8.0.1",
-    "vue": "^3.2.47"
+    "vue": "^3.2.47",
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.5.1",
