@@ -1,11 +1,3 @@
-/*
- * @Description: 集成 commitlint 验证提交规范
- * @Author: 三棵杨树
- * @Date: 2023-04-02 21:00:15
- * @LastEditors: 三棵杨树
- * @LastEditTime: 2023-04-02 21:00:15
- */
-
 /**
  * 提交规范
  * feat:     新增功能

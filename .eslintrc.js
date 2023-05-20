@@ -1,10 +1,3 @@
-/*
- * @Description: eslint配置文件
- * @Author: 三棵杨树
- * @Date: 2023-04-02 20:45:15
- * @LastEditors: 三棵杨树
- * @LastEditTime: 2023-04-02 20:54:01
- */
 module.exports = {
   env: {
     browser: true,
