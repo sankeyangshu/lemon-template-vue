@@ -2,7 +2,6 @@ import { createApp } from 'vue';
 import { setupStore } from '@/store';
 import { setupRouter } from '@/router';
 import App from './App.vue';
-import 'normalize.css'; // 统一各个浏览器之间的显示差异
 import './styles/index.scss'; // 全局css
 
 function bootstrap() {
