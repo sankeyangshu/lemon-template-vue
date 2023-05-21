@@ -2,6 +2,7 @@ import { createApp } from 'vue';
 import { setupStore } from '@/store';
 import { setupRouter } from '@/router';
 import App from './App.vue';
+import setupSvgIcons from '@/plugins/icons'; // 导入svg图标组件
 import './styles/index.scss'; // 全局css
 
 function bootstrap() {
@@ -13,6 +14,9 @@ function bootstrap() {
 
   // 配置路由
   setupRouter(app);
+
+  // 导入svg图标
+  setupSvgIcons(app);
 
   app.mount('#app');
 }
