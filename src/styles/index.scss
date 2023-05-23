@@ -22,3 +22,11 @@ html {
 #app {
   height: 100%;
 }
+
+/* 自定义暗黑模式样式 */
+html.dark {
+  body {
+    color: #fff;
+    background-color: #222;
+  }
+}

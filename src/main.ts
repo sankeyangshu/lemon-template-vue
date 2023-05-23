@@ -2,6 +2,7 @@ import { createApp } from 'vue';
 import { setupStore } from '@/store';
 import { setupRouter } from '@/router';
 import App from './App.vue';
+import 'virtual:svg-icons-register'; // svg-icons注册导入
 import setupSvgIcons from '@/plugins/icons'; // 导入svg图标组件
 import './styles/index.scss'; // 全局css
 
