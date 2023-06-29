@@ -15,6 +15,8 @@
 
 🚀🚀🚀 **vue-template-base** 使用了最新的`Vue3.2`、`Vite4`、`Pinia2`、`Typescript`等主流技术开发，集成 `Dark Mode`(暗黑)模式，并且持久化保存，集成了代码规范检查工具`Eslint`、`Prettier`。你可以在此之上直接开发你的业务代码！希望你能喜欢。👋👋👋
 
+**注：如果对您有帮助，您可以点右上角 "Star" 支持一下 谢谢！**
+
 ## ✨ 项目功能
 
 - 🚀 使用 Vue3.2 + TypeScript 开发，单文件组件**＜ script setup ＞**
