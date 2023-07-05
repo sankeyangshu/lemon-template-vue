@@ -20,12 +20,12 @@ import SwitchDark from '@/components/SwitchDark/index.vue';
 
 <style lang="scss" scoped>
 .wrap {
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 .logo {
   height: 6em;
