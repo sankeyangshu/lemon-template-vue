@@ -14,7 +14,7 @@
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
     "lint:lint-staged": "lint-staged",
-    "lint:eslint": "eslint \"{src}/**/*.{vue,ts,tsx}\" --fix",
+    "lint:eslint": "eslint \"src/**/*.{vue,ts,tsx}\" --fix",
     "lint:prettier": "prettier --write --loglevel warn \"src/**/*.{js,ts,json,tsx,css,less,scss,vue,html,md}\"",
     "lint:stylelint": "stylelint --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/",
     "prepare": "husky install"
@@ -60,6 +60,7 @@
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-vue": "^9.10.0",
     "husky": "^8.0.0",
     "lint-staged": "^13.2.0",
