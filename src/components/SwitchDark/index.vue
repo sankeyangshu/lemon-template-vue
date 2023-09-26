@@ -7,8 +7,8 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue';
-import { useSettingStore } from '@/store/modules/setting';
 import { useTheme } from '@/hooks/useTheme';
+import { useSettingStore } from '@/store/modules/setting';
 
 // 获取全局状态管理仓库中系统设置状态
 const settingStore = useSettingStore();
