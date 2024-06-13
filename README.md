@@ -142,4 +142,4 @@ pnpm build
 
 ## 许可证
 
-[MIT License](https://github.com/sankeyangshu/vue-template-base/blob/master/LICENSE)
+[MIT](./LICENSE) License © 2023-PRESENT [sankeyangshu](https://github.com/sankeyangshu)
