@@ -1,22 +1,31 @@
 module.exports = {
+  root: true,
   env: {
     browser: true,
     es2021: true,
     node: true,
   },
-  extends: [
-    'plugin:vue/vue3-essential',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended', // 添加 prettier 插件
-  ],
-  overrides: [],
+  // 指定如何解析语法
   parser: 'vue-eslint-parser',
+  // 优先级低于 parse 的语法解析配置
   parserOptions: {
     parser: '@typescript-eslint/parser',
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['vue', '@typescript-eslint', 'simple-import-sort'],
+  // 继承某些已有的规则
+  extends: [
+    'plugin:vue/vue3-essential',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended', // 添加 prettier 插件
+  ],
+  plugins: ['vue', '@typescript-eslint', 'import', 'prettier', 'simple-import-sort'],
+  overrides: [
+    {
+      files: ['*.ts', '*.tsx'],
+      parser: '@typescript-eslint/parser',
+    },
+  ],
   rules: {
     '@typescript-eslint/ban-types': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
