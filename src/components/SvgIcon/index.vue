@@ -10,24 +10,24 @@
 import { computed } from 'vue';
 
 // 获取父组件传递的值
-const props = defineProps({
-  // icon 图标
-  icon: {
-    type: String,
-    required: true,
-  },
-  // 图标类名
-  className: {
-    type: String,
-    default: '',
-  },
-});
+const props = withDefaults(
+  defineProps<{
+    // icon 图标
+    icon: string;
+    // 图标类名
+    className?: string;
+  }>(),
+  {
+    icon: '',
+    className: '',
+  }
+);
 
 /**
  * svg图标类名
  */
 const svgClass = computed(() => {
-  return props.className ? 'svg-icon ' + props.className : 'svg-icon';
+  return props.className ? `svg-icon ${props.className}` : 'svg-icon';
 });
 
 /**

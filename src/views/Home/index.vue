@@ -1,22 +1,17 @@
 <template>
   <div class="wrap">
     <div>
-      <a href="https://vitejs.dev" target="_blank">
+      <a href="https://vitejs.dev">
         <img src="/vite.svg" class="logo" alt="Vite logo" />
       </a>
-      <a href="https://vuejs.org/" target="_blank">
+      <a href="https://vuejs.org/">
         <img src="../../assets/vue.svg" class="logo vue" alt="Vue logo" />
       </a>
     </div>
-    <SwitchDark />
-    <HelloWorld msg="欢迎使用 Vue-Template-Base 模板" style="margin-top: 20px" />
   </div>
 </template>
 
-<script setup lang="ts">
-import HelloWorld from '@/components/HelloWorld.vue';
-import SwitchDark from '@/components/SwitchDark/index.vue';
-</script>
+<script setup lang="ts"></script>
 
 <style lang="scss" scoped>
 .wrap {
