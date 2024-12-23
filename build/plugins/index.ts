@@ -1,5 +1,7 @@
 import vue from '@vitejs/plugin-vue';
 import UnoCSS from 'unocss/vite';
+import { VantResolver } from 'unplugin-vue-components/resolvers';
+import Components from 'unplugin-vue-components/vite';
 import { configCompressPlugin } from './compress';
 import { configSvgIconsPlugin } from './svgPlugin';
 import type { PluginOption } from 'vite';
@@ -11,7 +13,15 @@ import type { PluginOption } from 'vite';
  * @returns vitePlugins[]
  */
 export const createVitePlugins = (viteEnv: ViteEnv, isBuild: boolean) => {
-  const vitePlugins: (PluginOption | PluginOption[])[] = [vue(), UnoCSS()];
+  const vitePlugins: (PluginOption | PluginOption[])[] = [
+    vue(),
+    Components({
+      dts: 'src/types/components.d.ts',
+      resolvers: [VantResolver()],
+      types: [],
+    }),
+    UnoCSS(),
+  ];
 
   vitePlugins.push(configSvgIconsPlugin(isBuild));
 

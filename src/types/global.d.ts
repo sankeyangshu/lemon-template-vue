@@ -1,3 +1,5 @@
+export {};
+
 declare global {
   const __APP_INFO__: {
     pkg: {
@@ -31,5 +33,3 @@ declare global {
     VITE_USE_IMAGEMIN: boolean;
   }
 }
-
-export {};
