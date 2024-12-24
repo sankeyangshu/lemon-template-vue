@@ -1,5 +1,7 @@
 <template>
-  <RouterView />
+  <VanConfigProvider>
+    <RouterView />
+  </VanConfigProvider>
 </template>
 
 <script setup lang="ts"></script>
