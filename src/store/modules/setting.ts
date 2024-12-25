@@ -1,23 +1,49 @@
 import { defineStore } from 'pinia';
+import { ref } from 'vue';
+import { DEFAULT_THEMECOLOR } from '@/config';
+import type { ConfigProviderTheme } from 'vant';
 
-interface settingsStateType {
-  isDark: boolean;
-}
+const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-export const useSettingStore = defineStore({
-  // id: 必须的，在所有 Store 中唯一
-  id: 'settingState',
+export const useSettingStore = defineStore(
+  'settingState',
+  () => {
+    const darkMode = ref<ConfigProviderTheme>(prefersDark ? 'dark' : 'light');
 
-  // state: 返回对象的函数
-  state: (): settingsStateType => ({
-    isDark: false, // 深色模式 切换暗黑模式
-  }),
+    const themeColor = ref(DEFAULT_THEMECOLOR); // 主题颜色
 
-  // actions: 可以同步 也可以异步
-  actions: {
-    // 设置暗黑模式
-    setThemeDark(value: boolean) {
-      this.isDark = value;
-    },
+    const isPageAnimate = ref(true); // 是否开启路由动画
+
+    const pageAnimateType = ref('zoom-fade'); // 路由动画类型
+
+    const setThemeDark = (value: ConfigProviderTheme) => {
+      darkMode.value = value;
+    };
+
+    const setThemeColor = (value: string) => {
+      themeColor.value = value;
+    };
+
+    const setPageAnimate = (value: boolean) => {
+      isPageAnimate.value = value;
+    };
+
+    const setPageAnimateType = (value: string) => {
+      pageAnimateType.value = value;
+    };
+
+    return {
+      darkMode,
+      themeColor,
+      isPageAnimate,
+      pageAnimateType,
+      setThemeDark,
+      setThemeColor,
+      setPageAnimate,
+      setPageAnimateType,
+    };
   },
-});
+  {
+    persist: true, // 进行持久化存储
+  }
+);

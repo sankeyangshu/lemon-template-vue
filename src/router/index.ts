@@ -10,21 +10,39 @@ import type { RouteRecordRaw } from 'vue-router';
 export const asyncRoutes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    name: 'Home',
+    name: 'Root',
     component: Layout,
     redirect: '/home',
     children: [
       {
         path: '/home',
-        name: 'home',
+        name: 'Home',
         component: () => import('@/views/Home/index.vue'),
         meta: { title: '首页', icon: 'home-o', iconType: 'vant', tabBar: true },
+      },
+      {
+        path: '/example',
+        name: 'Example',
+        component: () => import('@/views/Example/index.vue'),
+        meta: { title: '示例', icon: 'gem-o', iconType: 'vant', tabBar: true },
       },
       {
         path: '/user',
         name: 'User',
         component: () => import('@/views/User/index.vue'),
-        meta: { title: '我的', icon: 'contact-o', iconType: 'vant', tabBar: true },
+        meta: {
+          title: '我的',
+          icon: 'contact-o',
+          iconType: 'vant',
+          tabBar: true,
+          hiddenNavBar: true,
+        },
+      },
+      {
+        path: '/themeSetting',
+        name: 'ThemeSetting',
+        component: () => import('@/views/ThemeSetting/index.vue'),
+        meta: { title: '主题设置' },
       },
     ],
   },

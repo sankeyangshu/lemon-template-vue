@@ -6,6 +6,7 @@ import { setupStore } from './store';
 import 'virtual:svg-icons-register';
 import 'virtual:uno.css';
 import '@unocss/reset/normalize.css';
+import './styles/index.scss';
 
 function bootstrap() {
   const app = createApp(App);

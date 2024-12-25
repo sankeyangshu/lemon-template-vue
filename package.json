@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "@unocss/reset": "^0.65.2",
+    "@vueuse/core": "^12.2.0",
     "dayjs": "^1.11.13",
     "nprogress": "^0.2.0",
     "pinia": "^2.3.0",
