@@ -27,9 +27,9 @@ export const asyncRoutes: Array<RouteRecordRaw> = [
         meta: { title: '示例', icon: 'gem-o', iconType: 'vant', tabBar: true },
       },
       {
-        path: '/user',
-        name: 'User',
-        component: () => import('@/views/User/index.vue'),
+        path: '/mine',
+        name: 'Mine',
+        component: () => import('@/views/Mine/index.vue'),
         meta: {
           title: '我的',
           icon: 'contact-o',

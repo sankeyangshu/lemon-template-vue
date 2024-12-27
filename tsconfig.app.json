@@ -13,7 +13,8 @@
     /* Bundler mode */
     "moduleResolution": "bundler",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "~root/*": ["./*"]
     },
     "resolveJsonModule": true,
     "types": ["node", "vite/client"],
