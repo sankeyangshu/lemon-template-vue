@@ -9,11 +9,14 @@
         class="h-50 w-50"
         round
         fit="cover"
-        src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+        :src="isLogin ? userInfo?.avatar : 'https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg'"
       />
-      <div class="ml-10 flex-1">
+      <div v-if="!isLogin" class="ml-10 flex-1" @click="onClickLogin">
         <div class="mb-2 text-20">登录/注册</div>
-        <div class="text-14 color-[--color-text]">个性签名</div>
+      </div>
+      <div v-else class="ml-10 flex-1">
+        <div class="mb-2 text-20">{{ userInfo?.nickname }}</div>
+        <div class="truncate text-14 color-[--color-text]">{{ userInfo?.sign }}</div>
       </div>
     </div>
 
@@ -39,7 +42,7 @@
           </div>
         </template>
       </VanCell>
-      <VanCell title="退出登录" is-link>
+      <VanCell v-if="isLogin" title="退出登录" is-link @click="onClickLogout">
         <template #icon>
           <div class="leading-24">
             <IconifyIcon icon="mdi:logout" class="mr-5 text-18" />
@@ -52,6 +55,33 @@
 
 <script lang="ts" setup>
 import { version } from '~root/package.json';
+import { showConfirmDialog } from 'vant';
+import { computed } from 'vue';
+import { useRouter } from 'vue-router';
+import { useUserStore } from '@/store/modules/user';
+
+const userStore = useUserStore();
+const userInfo = computed(() => userStore.userInfo);
+const isLogin = computed(() => !!userInfo.value?.id);
+
+const router = useRouter();
+
+const onClickLogin = () => {
+  router.push('/login');
+};
+
+const onClickLogout = () => {
+  showConfirmDialog({
+    title: '温馨提示',
+    message: '确定要退出登录吗？',
+  })
+    .then(() => {
+      userStore.logout();
+    })
+    .catch(() => {
+      // on cancel
+    });
+};
 </script>
 
 <style lang="scss" scoped></style>

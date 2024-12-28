@@ -38,7 +38,10 @@ export function wrapperEnv(envConf: Recordable): ViteEnv {
       realName = Number(realName);
     }
     if (envName === 'VITE_PROXY') {
-      realName = JSON.parse(realName);
+      try {
+        realName = JSON.parse(realName);
+        // eslint-disable-next-line unused-imports/no-unused-vars, @typescript-eslint/no-unused-vars
+      } catch (error) {}
     }
     ret[envName] = realName;
     process.env[envName] = realName;

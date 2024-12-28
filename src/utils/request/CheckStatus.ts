@@ -1,4 +1,5 @@
 import { showFailToast } from 'vant';
+import { useUserStore } from '@/store/modules/user';
 
 /**
  * 校验网络请求状态码
@@ -6,6 +7,8 @@ import { showFailToast } from 'vant';
  * @param {string | string[]} msg 错误提示信息
  */
 export const checkStatus = (status: number, msg?: string | Array<string>): void => {
+  const userStore = useUserStore();
+
   let errMsg = ''; // 错误提示信息
   if (msg) {
     errMsg = typeof msg === 'string' ? msg : msg[0];
@@ -17,7 +20,8 @@ export const checkStatus = (status: number, msg?: string | Array<string>): void 
       break;
     case 401:
       showFailToast(errMsg || '登录失效！请您重新登录');
-      // TODO: 退出登录逻辑待开发
+      // 退出登录
+      userStore.logout(true);
       break;
     case 403:
       showFailToast(errMsg || '当前账号无权限访问！');

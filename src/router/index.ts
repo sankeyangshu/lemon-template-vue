@@ -15,6 +15,12 @@ export const asyncRoutes: Array<RouteRecordRaw> = [
     redirect: '/home',
     children: [
       {
+        path: '/login',
+        name: 'Login',
+        component: () => import('@/views/Login/index.vue'),
+        meta: { title: '登录' },
+      },
+      {
         path: '/home',
         name: 'Home',
         component: () => import('@/views/Home/index.vue'),
@@ -46,17 +52,44 @@ export const asyncRoutes: Array<RouteRecordRaw> = [
       },
     ],
   },
+  {
+    path: '/demo',
+    name: 'Demo',
+    component: Layout,
+    redirect: '/mock',
+    children: [
+      {
+        path: '/mock',
+        name: 'MockDemo',
+        component: () => import('@/views/Example/MockDemo.vue'),
+        meta: { title: 'Mock 指南' },
+      },
+      {
+        path: '/echarts',
+        name: 'EchartsDemo',
+        component: () => import('@/views/Example/EchartsDemo.vue'),
+        meta: { title: 'Echarts 演示' },
+      },
+      {
+        path: '/icon',
+        name: 'IconDemo',
+        component: () => import('@/views/Example/IconDemo.vue'),
+        meta: { title: 'Icon 示例' },
+      },
+      {
+        path: '/keepAlive',
+        name: 'KeepAliveDemo',
+        component: () => import('@/views/Example/KeepAliveDemo.vue'),
+        meta: { title: 'KeepAlive 演示', keepAlive: true },
+      },
+    ],
+  },
 ];
 
 /**
  * 公共路由
  */
 export const constantRoutes: Array<RouteRecordRaw> = [
-  {
-    path: '/login',
-    name: 'Login',
-    component: () => import('@/views/Login/index.vue'),
-  },
   {
     path: '/404',
     name: '404',

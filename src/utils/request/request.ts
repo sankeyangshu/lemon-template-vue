@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { showToast } from 'vant';
+import { useUserStore } from '@/store/modules/user';
 import { checkStatus } from './CheckStatus';
 import type { AxiosError, AxiosResponse } from 'axios';
 
@@ -16,15 +17,13 @@ service.interceptors.request.use(
   (config) => {
     // 发请求前做的一些处理，数据转化，配置请求头，设置token,设置loading等
     // 每次发送请求之前判断pinia中是否存在token,如果存在，则统一在http请求的header都加上token，这样后台根据token判断你的登录情况
-    // const userStore = useUserStore();
-    // const token = userStore.token;
+    const userStore = useUserStore();
+    const token = userStore.token;
 
-    // if (token) {
-    //   config.headers.Authorization = `Bearer ${token}`;
-    // }
-    // 数据转换,判断数据格式为formdata还是json格式
-    // json格式
-    // config.data = JSON.stringify(config.data);
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+
     return config;
   },
   (error: AxiosError) => {
@@ -32,7 +31,6 @@ service.interceptors.request.use(
     showToast({
       type: 'fail',
       message: '请求错误，请稍后再试',
-      duration: 5000,
     });
     return Promise.reject(error);
   }
@@ -61,7 +59,6 @@ service.interceptors.response.use(
       showToast({
         message: '网络超时',
         type: 'fail',
-        duration: 5000,
       });
     }
     // 根据响应的错误状态码，做不同的处理
