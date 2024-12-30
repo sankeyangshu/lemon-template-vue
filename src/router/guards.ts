@@ -8,7 +8,7 @@ import 'nprogress/nprogress.css';
 NProgress.configure({ showSpinner: false, parent: '#app' });
 
 // 白名单
-const whiteList = ['/login'];
+const whiteList = ['/login', '/register', '/forgotPassword'];
 
 export function createRouterGuard(router: Router) {
   router.beforeEach(async (to, _from, next) => {

@@ -21,6 +21,18 @@ export const asyncRoutes: Array<RouteRecordRaw> = [
         meta: { title: '登录' },
       },
       {
+        path: '/register',
+        name: 'Register',
+        component: () => import('@/views/Login/register.vue'),
+        meta: { title: '注册' },
+      },
+      {
+        path: '/forgotPassword',
+        name: 'ForgotPassword',
+        component: () => import('@/views/Login/forgotPassword.vue'),
+        meta: { title: '忘记密码' },
+      },
+      {
         path: '/home',
         name: 'Home',
         component: () => import('@/views/Home/index.vue'),
@@ -56,30 +68,29 @@ export const asyncRoutes: Array<RouteRecordRaw> = [
     path: '/demo',
     name: 'Demo',
     component: Layout,
-    redirect: '/mock',
     children: [
       {
         path: '/mock',
         name: 'MockDemo',
-        component: () => import('@/views/Example/MockDemo.vue'),
+        component: () => import('@/views/Example/mockDemo.vue'),
         meta: { title: 'Mock 指南' },
       },
       {
         path: '/echarts',
         name: 'EchartsDemo',
-        component: () => import('@/views/Example/EchartsDemo.vue'),
+        component: () => import('@/views/Example/echartsDemo.vue'),
         meta: { title: 'Echarts 演示' },
       },
       {
         path: '/icon',
         name: 'IconDemo',
-        component: () => import('@/views/Example/IconDemo.vue'),
+        component: () => import('@/views/Example/iconDemo.vue'),
         meta: { title: 'Icon 示例' },
       },
       {
         path: '/keepAlive',
         name: 'KeepAliveDemo',
-        component: () => import('@/views/Example/KeepAliveDemo.vue'),
+        component: () => import('@/views/Example/keepAliveDemo.vue'),
         meta: { title: 'KeepAlive 演示', keepAlive: true },
       },
     ],
