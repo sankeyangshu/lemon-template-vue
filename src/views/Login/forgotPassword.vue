@@ -64,6 +64,7 @@
 
 <script lang="ts" setup>
 import { reactive, ref } from 'vue';
+import { validPhone } from '@/utils/validate';
 import PasswordInput from './components/PasswordInput.vue';
 
 // 表单数据
@@ -75,10 +76,7 @@ const forgetForm = reactive({
 });
 
 const validatorPassword = (val: string | number) => val === forgetForm.password;
-const validatorPhone = (val: string) => {
-  const reg = /^(13[0-9]|14[01456879]|15[0-35-9]|16[2567]|17[0-8]|18[0-9]|19[0-35-9])\d{8}$/;
-  return reg.test(val);
-};
+const validatorPhone = (val: string) => validPhone(val);
 
 // 表单验证
 const rules = reactive({
