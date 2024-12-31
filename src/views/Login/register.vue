@@ -50,12 +50,12 @@
 
     <div class="fixed bottom-40 h-20 flex-center text-14 leading-20">
       <VanCheckbox v-model="isAgreeLicense" shape="square">
-        <view>
+        <div>
           我已阅读并同意
           <text class="color-[var(--van-primary-color)]">《隐私条款》</text>
           及
           <text class="color-[var(--van-primary-color)]">《用户协议》</text>
-        </view>
+        </div>
       </VanCheckbox>
     </div>
   </div>
