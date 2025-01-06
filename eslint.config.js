@@ -4,6 +4,9 @@ export default defineConfig(
   {
     vue: true,
     unocss: true,
+    formatter: {
+      markdown: true,
+    },
   },
   {
     rules: {
