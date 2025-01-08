@@ -1,4 +1,5 @@
 <div align="center">
+<img alt="Lemon-Template-Vue" width="200" height="200" src="/public/logo.svg">
 <h1 align="center">
   lemon-template-vue
 </h1>
