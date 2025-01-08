@@ -1,7 +1,9 @@
 <template>
   <div class="box-border wh-full flex-center px-12">
     <div class="wh-full">
-      <div class="mx-auto mb-40 mt-100 h-100 w-100">logo</div>
+      <div class="mx-auto mb-40 mt-100 h-100 w-100">
+        <img class="block wh-full" alt="logo" src="@/assets/icons/logo.svg" />
+      </div>
       <div
         class="my-10 box-border w-full rounded-12 bg-[var(--color-block-background)] px-20 py-12 text-18"
       >

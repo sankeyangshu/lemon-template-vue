@@ -1,12 +1,7 @@
 <template>
   <div class="box-border wh-full flex-y-center flex-col p-20">
     <div class="mb-30 mt-20">
-      <VanImage
-        class="h-100 w-100"
-        round
-        fit="cover"
-        src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
-      />
+      <img class="h-100 w-100" src="../../assets/images/logo.png" />
     </div>
 
     <VanForm :model="loginForm" validate-trigger="onSubmit" class="w-full" @submit="onSubmit">
