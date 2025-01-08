@@ -1,5 +1,8 @@
 <div align="center">
-<img alt="Lemon-Template-Vue" width="200" height="200" src="/public/logo.svg">
+<a href="https://github.com/sankeyangshu/lemon-template-vue">
+  <img alt="Lemon-Template-Vue" width="200" height="200" src="./public/logo.png">
+</a>
+
 <h1 align="center">
   lemon-template-vue
 </h1>
@@ -32,7 +35,7 @@
 
 ## 在线预览
 
-👓 [点击这里]()（PC浏览器请切换手机端模式）
+👓 [点击这里](https://lemon-template-vue.vercel.app/)（PC浏览器请切换手机端模式）
 
 ## 项目功能
 

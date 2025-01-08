@@ -1,5 +1,8 @@
 <div align="center">
-<img alt="Lemon-Template-Vue" width="200" height="200" src="/public/logo.svg">
+<a href="https://github.com/sankeyangshu/lemon-template-vue">
+  <img alt="Lemon-Template-Vue" width="200" height="200" src="./public/logo.png">
+</a>
+
 <h1 align="center">
   lemon-template-vue
 </h1>
@@ -32,7 +35,7 @@ You can directly start developing your business logic on this template! Hope you
 
 ## Preview
 
-👓 [Click Demo]() (Switch to mobile view on PC browsers)
+👓 [Click Demo](https://lemon-template-vue.vercel.app/) (Switch to mobile view on PC browsers)
 
 ## Features
 
