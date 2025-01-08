@@ -25,7 +25,6 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc -b && vite build",
     "build:dev": "vite build --mode development",
     "build:prod": "vite build --mode production",
     "build:test": "vite build --mode test",
@@ -36,6 +35,7 @@
     "clean:cache": "rimraf node_modules/.cache/ && rimraf node_modules/.vite",
     "clean:lib": "rimraf node_modules",
     "release": "bumpp",
+    "preinstall": "npx only-allow pnpm",
     "prepare": "simple-git-hooks"
   },
   "dependencies": {
