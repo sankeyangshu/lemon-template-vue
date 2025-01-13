@@ -11,8 +11,8 @@
         <VanField
           v-model="registerForm.username"
           name="username"
-          placeholder="请输入用户名"
-          :rules="[{ required: true, message: '请填写用户名' }]"
+          :placeholder="$t('login.usernameError')"
+          :rules="[{ required: true, message: $t('login.usernameError') }]"
         />
       </div>
       <div
@@ -21,8 +21,8 @@
         <PasswordInput
           v-model="registerForm.password"
           name="password"
-          placeholder="请输入密码"
-          :rules="[{ required: true, message: '请填写密码' }]"
+          :placeholder="$t('login.passwordError')"
+          :rules="[{ required: true, message: $t('login.passwordError') }]"
         />
       </div>
       <div
@@ -31,25 +31,25 @@
         <PasswordInput
           v-model="registerForm.confirmPassword"
           name="confirmPassword"
-          placeholder="请再次输入密码"
+          :placeholder="$t('login.againEnterPassword')"
           :rules="[
-            { required: true, message: '请再次填写密码' },
-            { validator: validatorPassword, message: '两次输入密码不一致' },
+            { required: true, message: $t('login.againEnterPassword') },
+            { validator: validatorPassword, message: $t('login.passwordInconsistent') },
           ]"
         />
       </div>
       <VanButton :loading="loading" round block type="primary" native-type="submit">
-        注册
+        {{ $t('login.register') }}
       </VanButton>
     </VanForm>
 
-    <div class="fixed bottom-40 h-20 flex-center text-14 leading-20">
+    <div class="fixed bottom-40 mx-20 h-20 flex-center text-14 leading-20">
       <VanCheckbox v-model="isAgreeLicense" shape="square">
         <div>
-          我已阅读并同意
-          <text class="color-[var(--van-primary-color)]">《隐私条款》</text>
-          及
-          <text class="color-[var(--van-primary-color)]">《用户协议》</text>
+          {{ $t('login.readAgreement') }}
+          <text class="color-[var(--van-primary-color)]">《{{ $t('login.privacyPolicy') }}》</text>
+          {{ $t('login.and') }}
+          <text class="color-[var(--van-primary-color)]">《{{ $t('login.userAgreement') }}》</text>
         </div>
       </VanCheckbox>
     </div>

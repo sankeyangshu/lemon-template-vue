@@ -20,7 +20,7 @@
           <VanIcon v-if="item.meta?.iconType === 'vant'" :name="`${item.meta?.icon}`" />
           <SvgIcon v-else :icon="`${item.meta?.icon}`" />
         </template>
-        {{ item.meta?.title }}
+        {{ $t(`route.${item.meta?.i18n}`) }}
       </VanTabbarItem>
     </VanTabbar>
   </div>
@@ -29,6 +29,7 @@
 <script lang="ts" setup>
 import { storeToRefs } from 'pinia';
 import { computed } from 'vue';
+import { useI18n } from 'vue-i18n';
 import { useRoute, useRouter } from 'vue-router';
 import { filterTabBar } from '@/router/util';
 import { useRouteStore } from '@/store/modules/route';
@@ -58,7 +59,9 @@ const tabbarList = computed(() => {
 
 const route = useRoute();
 
-const currentTitle = computed(() => route.meta?.title as string);
+const { t } = useI18n();
+
+const currentTitle = computed(() => t(`route.${route.meta?.i18n}`));
 
 const isShowNavBar = computed(() => !route.meta?.hiddenNavBar);
 

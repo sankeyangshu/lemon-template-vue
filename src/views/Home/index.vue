@@ -11,7 +11,7 @@
           <div class="font-bold">Lemon-Template-Vue</div>
           <IconifyIcon icon="mdi:github" class="ml-8 text-22" />
         </a>
-        <div class="mb-6 mt-12 text-14 leading-24">基于 Vue 3 生态系统的移动 Web 应用模板</div>
+        <div class="mb-6 mt-12 text-14 leading-24">{{ $t('home.info') }}</div>
       </div>
 
       <TransitionGroup
@@ -35,26 +35,29 @@
 
 <script setup lang="ts">
 import { onMounted, reactive, ref } from 'vue';
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
 
 const contentList = reactive([
-  '⚡ Vue3 + Vite6',
-  '🍕 TypeScript',
-  '✨ Vant4 组件库',
-  '🍍 Pinia 状态管理',
-  '🌀 Unocss 原子类框架',
-  '🗺️ Vue-router 4',
-  '💅 Vue 3.5+ 最新语法',
-  '🌠 使用最新的 <script setup> 语法',
-  '🎉 内置 Echarts VueUse',
-  '📏 vmin 视口适配',
-  '📡 Axios 封装',
-  '👏 集成多种图标方案',
-  '🔧 零配置 ESlint，集成Prettier',
-  '🎨 使用 Git Hook 进行规范化提交',
-  '🌓 主题配置，支持深色模式',
-  '📦 打包资源 gzip 压缩',
-  '🚀 首屏加载动画',
-  '🔒 完善的登录系统',
+  `⚡ ${t('home.vue')}`,
+  `🍕 ${t('home.typescript')}`,
+  `✨ ${t('home.vant')}`,
+  `🍍 ${t('home.pinia')}`,
+  `🌀 ${t('home.unocss')}`,
+  `🗺️ ${t('home.router')}`,
+  `💅 ${t('home.syntax')}`,
+  `🌠 ${t('home.setup')}`,
+  `🎉 ${t('home.utils')}`,
+  `📏 ${t('home.viewport')}`,
+  `📡 ${t('home.axios')}`,
+  `👏 ${t('home.icons')}`,
+  `🔧 ${t('home.eslint')}`,
+  `🎨 ${t('home.git')}`,
+  `🌓 ${t('home.theme')}`,
+  `📦 ${t('home.gzip')}`,
+  `🚀 ${t('home.loading')}`,
+  `🔒 ${t('home.auth')}`,
 ]);
 
 const contentItems = ref<HTMLElement[]>([]);

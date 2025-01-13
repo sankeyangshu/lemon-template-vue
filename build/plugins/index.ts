@@ -4,6 +4,7 @@ import { VantResolver } from 'unplugin-vue-components/resolvers';
 import Components from 'unplugin-vue-components/vite';
 import mockDevServerPlugin from 'vite-plugin-mock-dev-server';
 import { configCompressPlugin } from './compress';
+import { configVueI18nPlugin } from './i18nPlugin';
 import { configSvgIconsPlugin } from './svgPlugin';
 import type { PluginOption } from 'vite';
 
@@ -25,6 +26,10 @@ export const createVitePlugins = (viteEnv: ViteEnv, isBuild: boolean) => {
       resolvers: [VantResolver()],
       types: [],
     }),
+
+    // 配置i18n
+    configVueI18nPlugin(),
+
     UnoCSS(),
   ];
 

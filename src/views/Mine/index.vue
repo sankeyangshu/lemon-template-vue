@@ -12,7 +12,7 @@
         :src="isLogin ? userInfo?.avatar : 'https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg'"
       />
       <div v-if="!isLogin" class="ml-10 flex-1" @click="onClickLogin">
-        <div class="mb-2 text-20">登录/注册</div>
+        <div class="mb-2 text-20">{{ $t('login.login') }}/{{ $t('login.register') }}</div>
       </div>
       <div v-else class="ml-10 flex-1">
         <div class="mb-2 text-20">{{ userInfo?.nickname }}</div>
@@ -21,28 +21,28 @@
     </div>
 
     <VanCellGroup inset>
-      <VanCell title="主题设置" is-link to="/themeSetting">
+      <VanCell :title="$t('route.themeSetting')" is-link to="/themeSetting">
         <template #icon>
           <div class="leading-24">
             <IconifyIcon icon="mdi:palette" class="mr-5 text-18" />
           </div>
         </template>
       </VanCell>
-      <VanCell title="项目文档" is-link>
+      <VanCell :title="$t('mine.projectDocs')" is-link>
         <template #icon>
           <div class="leading-24">
             <IconifyIcon icon="mdi:book-open-variant" class="mr-5 text-18" />
           </div>
         </template>
       </VanCell>
-      <VanCell title="系统版本" :value="`v${version}`">
+      <VanCell :title="$t('mine.systemVersion')" :value="`v${version}`">
         <template #icon>
           <div class="leading-24">
             <IconifyIcon icon="mdi:cellphone-settings-variant" class="mr-5 text-18" />
           </div>
         </template>
       </VanCell>
-      <VanCell v-if="isLogin" title="退出登录" is-link @click="onClickLogout">
+      <VanCell v-if="isLogin" :title="$t('mine.logout')" is-link @click="onClickLogout">
         <template #icon>
           <div class="leading-24">
             <IconifyIcon icon="mdi:logout" class="mr-5 text-18" />
@@ -57,6 +57,7 @@
 import { version } from '~root/package.json';
 import { showConfirmDialog } from 'vant';
 import { computed } from 'vue';
+import { useI18n } from 'vue-i18n';
 import { useRouter } from 'vue-router';
 import { useUserStore } from '@/store/modules/user';
 
@@ -70,10 +71,12 @@ const onClickLogin = () => {
   router.push('/login');
 };
 
+const { t } = useI18n();
+
 const onClickLogout = () => {
   showConfirmDialog({
-    title: '温馨提示',
-    message: '确定要退出登录吗？',
+    title: t('mine.tips'),
+    message: t('mine.logoutTips'),
   })
     .then(() => {
       userStore.logout();

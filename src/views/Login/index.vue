@@ -11,8 +11,8 @@
         <VanField
           v-model="loginForm.username"
           name="username"
-          placeholder="请输入用户名"
-          :rules="[{ required: true, message: '请填写用户名' }]"
+          :placeholder="$t('login.usernameError')"
+          :rules="[{ required: true, message: $t('login.usernameError') }]"
         />
       </div>
       <div
@@ -21,12 +21,12 @@
         <PasswordInput
           v-model="loginForm.password"
           name="password"
-          placeholder="请输入密码"
-          :rules="[{ required: true, message: '请填写密码' }]"
+          :placeholder="$t('login.passwordError')"
+          :rules="[{ required: true, message: $t('login.passwordError') }]"
         />
       </div>
       <VanButton :loading="loading" round block type="primary" native-type="submit">
-        提交
+        {{ $t('login.login') }}
       </VanButton>
     </VanForm>
 
@@ -37,9 +37,9 @@
     </div>
 
     <div class="mt-32 h-20 flex-center text-14 color-[var(--van-primary-color)] leading-20">
-      <div @click="onClickForget">找回密码</div>
+      <div @click="onClickForget">{{ $t('login.forgotPassword') }}</div>
       <div class="mx-15">|</div>
-      <div @click="onClickRegister">注册账号</div>
+      <div @click="onClickRegister">{{ $t('login.registerAccount') }}</div>
     </div>
   </div>
 </template>

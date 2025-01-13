@@ -1,6 +1,7 @@
 import { createApp } from 'vue';
 import setupSvgIcons from '@/plugins/SvgIcons';
 import App from './App.vue';
+import { setupI18n } from './locales';
 import { setupRouter } from './router';
 import { setupStore } from './store';
 import 'virtual:svg-icons-register';
@@ -20,6 +21,8 @@ function bootstrap() {
   setupRouter(app);
 
   setupSvgIcons(app);
+
+  setupI18n(app);
 
   app.mount('#app');
 }

@@ -4,8 +4,8 @@
       <img class="w-350" src="@/assets/images/404.png" alt="404" />
     </div>
     <div class="text-center">
-      <div class="m-20 text-18">抱歉，你访问的页面不存在</div>
-      <VanButton type="primary" @click="onClickGoHome"> 回到首页 </VanButton>
+      <div class="m-20 text-18">{{ $t('errorPages.404') }}</div>
+      <VanButton type="primary" @click="onClickGoHome"> {{ $t('errorPages.back') }} </VanButton>
     </div>
   </div>
 </template>

@@ -1,4 +1,5 @@
 import { showFailToast } from 'vant';
+import { i18n } from '@/locales';
 import { useUserStore } from '@/store/modules/user';
 
 /**
@@ -16,38 +17,38 @@ export const checkStatus = (status: number, msg?: string | Array<string>): void 
 
   switch (status) {
     case 400:
-      showFailToast(errMsg || '请求失败！请您稍后重试');
+      showFailToast(errMsg || i18n.global.t('api.errMsg400'));
       break;
     case 401:
-      showFailToast(errMsg || '登录失效！请您重新登录');
+      showFailToast(errMsg || i18n.global.t('api.errMsg401'));
       // 退出登录
       userStore.logout(true);
       break;
     case 403:
-      showFailToast(errMsg || '当前账号无权限访问！');
+      showFailToast(errMsg || i18n.global.t('api.errMsg403'));
       break;
     case 404:
-      showFailToast(errMsg || '你所访问的资源不存在！');
+      showFailToast(errMsg || i18n.global.t('api.errMsg404'));
       break;
     case 405:
-      showFailToast(errMsg || '请求方式错误！请您稍后重试');
+      showFailToast(errMsg || i18n.global.t('api.errMsg405'));
       break;
     case 408:
-      showFailToast(errMsg || '请求超时！请您稍后重试');
+      showFailToast(errMsg || i18n.global.t('api.errMsg408'));
       break;
     case 500:
-      showFailToast(errMsg || '服务异常！');
+      showFailToast(errMsg || i18n.global.t('api.errMsg500'));
       break;
     case 502:
-      showFailToast(errMsg || '网络错误！');
+      showFailToast(errMsg || i18n.global.t('api.errMsg502'));
       break;
     case 503:
-      showFailToast(errMsg || '服务不可用，服务器暂时过载或维护！');
+      showFailToast(errMsg || i18n.global.t('api.errMsg503'));
       break;
     case 504:
-      showFailToast(errMsg || '网络超时！');
+      showFailToast(errMsg || i18n.global.t('api.errMsg504'));
       break;
     default:
-      showFailToast(errMsg || '请求失败！');
+      showFailToast(errMsg || i18n.global.t('api.errMsgDefault'));
   }
 };

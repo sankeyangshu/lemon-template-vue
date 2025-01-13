@@ -6,7 +6,7 @@
     <VanStepper v-model="value" />
 
     <div class="mt-20 color-[var(--van-text-color-2)]">
-      当前组件会被缓存，再次进入时会保留之前的状态
+      {{ $t('example.keepAliveTips') }}
     </div>
   </div>
 </template>

@@ -1,7 +1,7 @@
 <template>
   <div class="box-border w-full p-20">
     <div border="l-3 l-solid color-[var(--van-primary-color)]" class="mb-12 pl-12 leading-27">
-      <div class="my-[4px] text-[18px] font-bold">来自Mock请求的数据</div>
+      <div class="my-[4px] text-[18px] font-bold">{{ $t('example.mockTips') }}</div>
     </div>
 
     <div
@@ -10,7 +10,7 @@
       <div v-if="message" class="overflow-auto whitespace-pre text-left">
         {{ message }}
       </div>
-      <VanEmpty v-else description="暂无数据" />
+      <VanEmpty v-else :description="$t('example.noData')" />
     </div>
 
     <VanButton
@@ -21,7 +21,7 @@
       :loading="loading"
       @click="onClickGetMessage"
     >
-      请求
+      {{ $t('example.request') }}
     </VanButton>
   </div>
 </template>

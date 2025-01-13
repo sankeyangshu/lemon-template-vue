@@ -12,7 +12,7 @@
           v-model="forgetForm.phone"
           name="phone"
           type="tel"
-          placeholder="请输入手机号"
+          :placeholder="$t('login.pleaseEnterPhone')"
           :rules="rules.phone"
         />
       </div>
@@ -22,11 +22,11 @@
         <VanField
           v-model="forgetForm.code"
           name="code"
-          placeholder="请输入短信验证码"
+          :placeholder="$t('login.pleaseEnterVerificationCode')"
           :rules="rules.code"
         >
           <template #button>
-            <VanButton size="small" type="primary"> 获取验证码 </VanButton>
+            <VanButton size="small" type="primary"> {{ $t('login.code') }} </VanButton>
           </template>
         </VanField>
       </div>
@@ -36,7 +36,7 @@
         <PasswordInput
           v-model="forgetForm.password"
           name="password"
-          placeholder="请输入新密码"
+          :placeholder="$t('login.pleaseEnterNewPassword')"
           :rules="rules.password"
         />
       </div>
@@ -46,12 +46,12 @@
         <PasswordInput
           v-model="forgetForm.confirmPassword"
           name="confirmPassword"
-          placeholder="请再次输入新密码"
+          :placeholder="$t('login.pleaseEnterNewPasswordAgain')"
           :rules="rules.confirmPassword"
         />
       </div>
       <VanButton :loading="loading" round block type="primary" native-type="submit">
-        确认重置
+        {{ $t('login.confirmReset') }}
       </VanButton>
     </VanForm>
   </div>
@@ -59,6 +59,7 @@
 
 <script lang="ts" setup>
 import { reactive, ref } from 'vue';
+import { useI18n } from 'vue-i18n';
 import { validPhone } from '@/utils/validate';
 import PasswordInput from './components/PasswordInput.vue';
 
@@ -73,17 +74,19 @@ const forgetForm = reactive({
 const validatorPassword = (val: string | number) => val === forgetForm.password;
 const validatorPhone = (val: string) => validPhone(val);
 
+const { t } = useI18n();
+
 // 表单验证
 const rules = reactive({
   phone: [
-    { required: true, message: '请填写手机号' },
-    { validator: validatorPhone, message: '请输入正确的手机号' },
+    { required: true, message: t('login.pleaseEnterPhone') },
+    { validator: validatorPhone, message: t('login.pleaseEnterValidPhone') },
   ],
-  code: [{ required: true, message: '请填写验证码' }],
-  password: [{ required: true, message: '请填写新密码' }],
+  code: [{ required: true, message: t('login.pleaseEnterVerificationCode') }],
+  password: [{ required: true, message: t('login.pleaseEnterNewPassword') }],
   confirmPassword: [
-    { required: true, message: '请再次输入新密码' },
-    { validator: validatorPassword, message: '两次输入密码不一致' },
+    { required: true, message: t('login.pleaseEnterNewPasswordAgain') },
+    { validator: validatorPassword, message: t('login.passwordInconsistent') },
   ],
 });
 
