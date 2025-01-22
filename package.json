@@ -19,6 +19,17 @@
   "bugs": {
     "url": "https://github.com/sankeyangshu/lemon-template-vue/issues"
   },
+  "keywords": [
+    "vue",
+    "templates",
+    "echarts",
+    "typescript",
+    "vant",
+    "vueuse",
+    "pinia",
+    "i18n",
+    "unocss"
+  ],
   "engines": {
     "node": "^18.18.0 || >=20.0.0",
     "pnpm": ">=8.15.4"

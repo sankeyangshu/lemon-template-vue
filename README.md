@@ -19,7 +19,7 @@ A mobile web apps template based on the Vue 3 ecosystem.
   <img src="https://img.shields.io/github/issues-closed/sankeyangshu/lemon-template-vue" alt="issues" />
 </p>
 
-[Docs]() / [Discussion]() / [Feedback](https://github.com/sankeyangshu/lemon-template-vue/issues)
+[Docs]() / [Feedback](https://github.com/sankeyangshu/lemon-template-vue/issues)
 
 </div>
 
@@ -31,7 +31,8 @@ A mobile web apps template based on the Vue 3 ecosystem.
 
 You can directly start developing your business logic on this template! Hope you enjoy it. 👋👋👋
 
-**Note: If this project is helpful to you, please click the "Star" button in the top-right corner. Thank you!**
+> [!NOTE]
+> If this project is helpful to you, please click the "Star" button in the top-right corner. Thank you!
 
 ## Preview
 

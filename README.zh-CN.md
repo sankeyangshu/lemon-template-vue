@@ -19,7 +19,7 @@
   <img src="https://img.shields.io/github/issues-closed/sankeyangshu/lemon-template-vue" alt="issues" />
 </p>
 
-[文档]() / [交流]() / [反馈](https://github.com/sankeyangshu/lemon-template-vue/issues)
+[文档]() / [反馈](https://github.com/sankeyangshu/lemon-template-vue/issues)
 
 </div>
 
@@ -31,7 +31,8 @@
 
 你可以在此之上直接开发你的业务代码！希望你能喜欢。👋👋👋
 
-**注：如果对您有帮助，您可以点右上角 "Star" 支持一下 谢谢！**
+> [!NOTE]
+> 如果对您有帮助，您可以点右上角 "Star" 支持一下 谢谢！
 
 ## 在线预览
 
