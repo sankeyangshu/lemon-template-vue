@@ -28,7 +28,7 @@
           </div>
         </template>
       </VanCell>
-      <VanCell :title="$t('mine.projectDocs')" is-link>
+      <VanCell :title="$t('mine.projectDocs')" is-link @click="onClickOpenDocs">
         <template #icon>
           <div class="leading-24">
             <IconifyIcon icon="mdi:book-open-variant" class="mr-5 text-18" />
@@ -69,6 +69,11 @@ const router = useRouter();
 
 const onClickLogin = () => {
   router.push('/login');
+};
+
+// 打开文档
+const onClickOpenDocs = () => {
+  window.open('https://sankeyangshu.github.io/lemon-template-docs/vue/', '_blank');
 };
 
 const { t } = useI18n();

@@ -53,8 +53,8 @@ import PasswordInput from './components/PasswordInput.vue';
 
 // 表单数据
 const loginForm = reactive({
-  username: '', // 用户名
-  password: '', // 密码
+  username: 'admin', // 用户名
+  password: '123456', // 密码
 });
 
 // 按钮加载状态
