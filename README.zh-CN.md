@@ -19,7 +19,7 @@
   <img src="https://img.shields.io/github/issues-closed/sankeyangshu/lemon-template-vue" alt="issues" />
 </p>
 
-[文档]() / [反馈](https://github.com/sankeyangshu/lemon-template-vue/issues)
+[文档](https://sankeyangshu.github.io/lemon-template-docs/vue/) / [反馈](https://github.com/sankeyangshu/lemon-template-vue/issues)
 
 </div>
 

@@ -19,7 +19,7 @@ A mobile web apps template based on the Vue 3 ecosystem.
   <img src="https://img.shields.io/github/issues-closed/sankeyangshu/lemon-template-vue" alt="issues" />
 </p>
 
-[Docs]() / [Feedback](https://github.com/sankeyangshu/lemon-template-vue/issues)
+[Docs](https://sankeyangshu.github.io/lemon-template-docs/vue/) / [Feedback](https://github.com/sankeyangshu/lemon-template-vue/issues)
 
 </div>
 
