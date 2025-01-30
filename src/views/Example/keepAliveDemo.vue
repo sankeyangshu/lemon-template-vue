@@ -14,6 +14,10 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 
+defineOptions({
+  name: 'KeepAliveDemo',
+});
+
 const text = ref('');
 const value = ref(1);
 </script>
