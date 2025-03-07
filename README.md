@@ -41,6 +41,7 @@ You can directly start developing your business logic on this template! Hope you
 ## Other Templates
 
 - [lemon-template-react](https://github.com/sankeyangshu/lemon-template-react) - A mobile web apps template based on the React ecosystem
+- [lemon-template-uniapp](https://github.com/sankeyangshu/lemon-template-uniapp) - An mobile web apps template based on the UniApp ecosystem
 
 ## Features
 
