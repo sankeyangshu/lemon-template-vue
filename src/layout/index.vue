@@ -6,8 +6,8 @@
       </template>
     </VanNavBar>
 
-    <RouterView v-slot="{ Component, route }" class="flex-1 overflow-x-hidden">
-      <Transition :name="getTransitionName" mode="out-in" appear>
+    <RouterView v-slot="{ Component, route }">
+      <Transition :name="getTransitionName" mode="out-in" appear class="flex-1 overflow-x-hidden">
         <KeepAlive :include="keepAliveRoutes">
           <component :is="Component" :key="route.path" />
         </KeepAlive>
