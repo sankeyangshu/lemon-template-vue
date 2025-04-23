@@ -8,11 +8,9 @@
 
     <RouterView v-slot="{ Component, route }">
       <Transition :name="getTransitionName" mode="out-in" appear>
-        <div class="flex-1 overflow-x-hidden">
-          <KeepAlive :include="keepAliveRoutes">
-            <component :is="Component" :key="route.path" />
-          </KeepAlive>
-        </div>
+        <KeepAlive :include="keepAliveRoutes">
+          <component :is="Component" :key="route.path" class="flex-1 overflow-x-hidden" />
+        </KeepAlive>
       </Transition>
     </RouterView>
 
